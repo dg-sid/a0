@@ -6,11 +6,12 @@ pipeline {
 
   }
   stages {
-	stage ('Hello') {
-	  steps {
-	    sh 'echo "Hello"'
-	  }
-	}
+    stage('Hello') {
+      steps {
+        sh 'echo "Hello"'
+      }
+    }
+
     stage('build') {
       steps {
         sh 'mvn --version'
