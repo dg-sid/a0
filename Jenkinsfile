@@ -14,13 +14,18 @@ pipeline {
           }
         }
 
+<<<<<<< HEAD
         stage('java_v') {
+=======
+        stage('java_version') {
+>>>>>>> 5ed5cda86dc218717e1ec038c36d20b073ef4c7c
           steps {
-            bat(script: 'java -version', returnStdout: true)
+            sh 'java -version'
           }
         }
 
         stage('check_unix') {
+          agent any
           steps {
             isUnix()
           }
@@ -29,20 +34,9 @@ pipeline {
       }
     }
 
-    stage('Mvn_version') {
-      parallel {
-        stage('version') {
-          steps {
-            sh 'mvn --version'
-          }
-        }
-
-        stage('version_w') {
-          steps {
-            bat(script: 'mvn -v', returnStdout: true)
-          }
-        }
-
+    stage('version') {
+      steps {
+        sh 'mvn --version'
       }
     }
 
@@ -50,6 +44,12 @@ pipeline {
       steps {
         pwd(tmp: true)
         sh 'date -rfc'
+      }
+    }
+
+    stage('env_var') {
+      steps {
+        sh 'printenv'
       }
     }
 
