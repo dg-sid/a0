@@ -6,7 +6,7 @@ pipeline {
 
   }
   stages {
-    stage('Hello') {
+    stage('Hello_version_os') {
       parallel {
         stage('Hello') {
           steps {
@@ -14,7 +14,7 @@ pipeline {
           }
         }
 
-        stage('Hello_w') {
+        stage('java_v') {
           steps {
             bat(script: 'java -version', returnStdout: true)
           }
@@ -49,7 +49,7 @@ pipeline {
     stage('date') {
       steps {
         pwd(tmp: true)
-        sh 'date D'
+        sh 'date -rfc'
       }
     }
 
