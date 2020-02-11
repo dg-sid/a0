@@ -14,11 +14,7 @@ pipeline {
           }
         }
 
-<<<<<<< HEAD
         stage('java_v') {
-=======
-        stage('java_version') {
->>>>>>> 5ed5cda86dc218717e1ec038c36d20b073ef4c7c
           steps {
             sh 'java -version'
           }
