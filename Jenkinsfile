@@ -39,7 +39,7 @@ pipeline {
     stage('date') {
       steps {
         pwd(tmp: true)
-        sh 'date -rfc'
+        sh 'date'
       }
     }
 
