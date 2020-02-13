@@ -30,7 +30,17 @@ pipeline {
       }
     }
 
-    stage('version') {
+    
+	
+	stage('check_unix') {
+		agent any
+        steps {
+          isUnix()
+		  sh 'echo "foo"'
+        }
+    }
+	  
+	stage('version') {
       steps {
         sh 'mvn --version'
       }
