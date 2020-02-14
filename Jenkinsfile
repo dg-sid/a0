@@ -26,12 +26,9 @@ pipeline {
             isUnix()
           }
         }
-
       }
     }
-
-    
-	  
+ 
 	stage('version') {
       steps {
         sh 'mvn --version'
@@ -50,6 +47,5 @@ pipeline {
         sh 'printenv'
       }
     }
-
   }
 }
