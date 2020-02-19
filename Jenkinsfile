@@ -43,8 +43,10 @@ pipeline {
 		}
 	}
 	post {
-		always {
-			junit 'build/reports/**/*.xml'
-		}
+    	always {
+    		mail to: 'DGuleac@sidonline.com',
+    		subject: "Pipeline: ${currentBuild.fullDisplayName}",
+    		body: "Check the results ${env.BUILD_URL}"
+    	}
 	}
 }
