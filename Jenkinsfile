@@ -43,10 +43,9 @@ pipeline {
 		}
 	}
 	post {
-    	always {
-    		mail to: 'DGuleac@sidonline.com',
-    		subject: "Pipeline: ${currentBuild.fullDisplayName}",
-    		body: "Check the results ${env.BUILD_URL}"
+    	always {    		
+    		sh 'echo "Pipeline: ${currentBuild.fullDisplayName}"'
+    		sh 'echo s"Check the results ${env.BUILD_URL}"'
     	}
 	}
 }
