@@ -44,8 +44,10 @@ pipeline {
 	}
 	post {
     	always {    		
-    		sh 'echo "Pipeline: ${currentBuild.fullDisplayName}"'
-    		sh 'echo "Check the results ${env.BUILD_URL}"'
+    		sh """
+    			echo "Pipeline: ${currentBuild.fullDisplayName}"
+    			echo "Check the results ${env.BUILD_URL}"
+    		"""
     	}
 	}
 }
